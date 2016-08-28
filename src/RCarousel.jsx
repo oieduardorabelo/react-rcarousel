@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RCarousel = ({ currentIndex, ...props }) => {
+const RCarousel = ({ current, ...props }) => {
   const length = props.length || props.children.length || 0
 
   const styles = {
@@ -9,7 +9,7 @@ const RCarousel = ({ currentIndex, ...props }) => {
     },
     inner: {
       height: '100%',
-      transform: `translateX(${(currentIndex % length) * -100}%)`,
+      transform: `translateX(${(current % length) * -100}%)`,
       transition: 'transform .2s ease-out',
       whiteSpace: 'nowrap',
       willChange: 'transform',
@@ -47,7 +47,7 @@ const RCarousel = ({ currentIndex, ...props }) => {
 }
 
 RCarousel.propTypes = {
-  currentIndex: React.PropTypes.number,
+  current: React.PropTypes.number,
   length: React.PropTypes.number,
   children: React.PropTypes.array,
 }

@@ -6,14 +6,29 @@ const RCarouselConnect = (ToConnectComp) => {
       super()
       this.state = {
         index: 0,
+        total: 0,
       }
     }
 
+    componentDidMount() {
+      const childrens = ToConnectComp({
+        ...this.props,
+        ...this.state
+      }).props.children[0].props.children.length
+      this.setState({ total: childrens })
+    }
+
     previous = () => {
-      const { index } = this.state
+      const { index, total } = this.state
       if (index > 0) {
         window.requestAnimationFrame(() => {
           this.setState({ index: index - 1 })
+        })
+      }
+
+      if (index === 0) {
+        window.requestAnimationFrame(() => {
+          this.setState({ index: total - 1 })
         })
       }
     }
