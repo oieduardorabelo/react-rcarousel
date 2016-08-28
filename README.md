@@ -12,7 +12,7 @@ $ npm install -D oieduardorabelo/react-rcarousel
 
 You can check a real example in `example/` dir
 
-```
+```js
 <div>
   <RCarousel currentIndex={props.index}>
     <div className="HomeCarousel__item">Slide one</div>
