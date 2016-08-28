@@ -22,7 +22,7 @@ const HomeCarousel = (props) => (
       <div>Slide two</div>
       <div>Slide three</div>
     </RCarousel>
-    <button type="button" onClick={props.previous} disabled={(props.index % 3) === 0}>Previous</button>
+    <button type="button" onClick={props.previous}>Previous</button>
     <button type="button" onClick={props.next}>Next</button>
   </div>
 )

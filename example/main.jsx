@@ -7,12 +7,12 @@ const AppRoot = window.document.querySelector('#AppRoot')
 
 const HomeCarousel = (props) => (
   <div>
-    <RCarousel currentIndex={props.index}>
+    <RCarousel current={props.index}>
       <div className="HomeCarousel__item">Slide one</div>
       <div className="HomeCarousel__item">Slide two</div>
       <div className="HomeCarousel__item">Slide three</div>
     </RCarousel>
-    <button type="button" onClick={props.previous} disabled={(props.index % 3) === 0}>Previous</button>
+    <button type="button" onClick={props.previous}>Previous</button>
     <button type="button" onClick={props.next}>Next</button>
   </div>
 )
