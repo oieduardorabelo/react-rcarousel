@@ -13,15 +13,23 @@ $ npm install -D oieduardorabelo/react-rcarousel
 You can check a real example in `example/` dir
 
 ```js
-<div>
-  <RCarousel currentIndex={props.index}>
-    <div>Slide one</div>
-    <div>Slide two</div>
-    <div>Slide three</div>
-  </RCarousel>
-  <button type="button" onClick={props.previous} disabled={(props.index % 3) === 0}>Previous</button>
-  <button type="button" onClick={props.next}>Next</button>
-</div>
+import { RCarouselConnect, RCarousel } from '../src'
+
+const HomeCarousel = (props) => (
+  <div>
+    <RCarousel currentIndex={props.index}>
+      <div>Slide one</div>
+      <div>Slide two</div>
+      <div>Slide three</div>
+    </RCarousel>
+    <button type="button" onClick={props.previous} disabled={(props.index % 3) === 0}>Previous</button>
+    <button type="button" onClick={props.next}>Next</button>
+  </div>
+)
+
+const HomeCarouselConnected = RCarouselConnect(HomeCarousel)
+
+// Render your connected carousel
 ```
 
 ## Badges
