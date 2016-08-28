@@ -13,7 +13,7 @@ $ npm install -D oieduardorabelo/react-rcarousel
 You can check a real example in `example/` dir
 
 ```js
-import { RCarouselConnect, RCarousel } from '../src'
+import { RCarouselConnect, RCarousel } from 'react-rcarousel'
 
 const HomeCarousel = (props) => (
   <div>
